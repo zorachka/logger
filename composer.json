@@ -17,7 +17,7 @@
     "require": {
         "php": "^8.0",
         "monolog/monolog": "^2.3",
-        "zorachka/container": "^1.0"
+        "zorachka/container": "^2.0"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest"
