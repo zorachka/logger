@@ -16,10 +16,8 @@
     ],
     "require": {
         "php": "^8.0",
-        "monolog/monolog": "^2.3"
-    },
-    "suggest": {
-        "zorachka/container": "For ServiceProvider interface"
+        "monolog/monolog": "^2.3",
+        "zorachka/container": "^1.0"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest"

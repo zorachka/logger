@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Zorachka\Framework\Logger;
 
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 use Zorachka\Framework\Container\ServiceProvider;
 
 final class LoggerServiceProvider implements ServiceProvider
