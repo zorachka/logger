@@ -59,9 +59,9 @@ final class LoggerConfig
     }
 
     /**
-     * @return string
+     * @return ?string
      */
-    public function file(): string
+    public function file(): ?string
     {
         return $this->file;
     }
