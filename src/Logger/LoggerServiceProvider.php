@@ -18,7 +18,7 @@ final class LoggerServiceProvider implements ServiceProvider
     public static function getDefinitions(): array
     {
         return [
-            LoggerInterface::class => function (ContainerInterface $container) {
+            LoggerInterface::class => static function (ContainerInterface $container) {
                 /** @var LoggerConfig $logger */
                 $config = $container->get(LoggerConfig::class);
 
@@ -36,7 +36,7 @@ final class LoggerServiceProvider implements ServiceProvider
 
                 return $monolog;
             },
-            LoggerConfig::class => fn() => LoggerConfig::withDefaults(),
+            LoggerConfig::class => static fn() => LoggerConfig::withDefaults(),
         ];
     }
 
