@@ -2,27 +2,28 @@
 
 declare(strict_types=1);
 
-namespace Zorachka\Framework\Logger;
+namespace Zorachka\Logger;
 
+use Monolog\Handler\StreamHandler;
+use Monolog\Level;
+use Monolog\Logger;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
 use Zorachka\Container\ServiceProvider;
 
 final class LoggerServiceProvider implements ServiceProvider
 {
     /**
-     * @inheritDoc
+     *
      */
     public static function getDefinitions(): array
     {
         return [
             LoggerInterface::class => static function (ContainerInterface $container) {
-                /** @var LoggerConfig $logger */
+                /** @var LoggerConfig $config */
                 $config = $container->get(LoggerConfig::class);
 
-                $level = $config->debug() ? Logger::DEBUG : Logger::INFO;
+                $level = $config->debug() ? Level::Debug : Level::Info;
 
                 $monolog = new Logger($config->name());
 
@@ -36,12 +37,12 @@ final class LoggerServiceProvider implements ServiceProvider
 
                 return $monolog;
             },
-            LoggerConfig::class => static fn() => LoggerConfig::withDefaults(),
+            LoggerConfig::class => static fn () => LoggerConfig::withDefaults(),
         ];
     }
 
     /**
-     * @inheritDoc
+     *
      */
     public static function getExtensions(): array
     {
