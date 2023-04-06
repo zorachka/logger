@@ -30,13 +30,13 @@ final class LoggerConfig
         bool $stderr = true,
     ): self {
         return new self(
-            $name, $debug, $file, $stderr
+            $name,
+            $debug,
+            $file,
+            $stderr
         );
     }
 
-    /**
-     * @return string
-     */
     public function name(): string
     {
         return $this->name;
@@ -50,9 +50,6 @@ final class LoggerConfig
         return $new;
     }
 
-    /**
-     * @return bool
-     */
     public function debug(): bool
     {
         return $this->debug;
@@ -66,9 +63,6 @@ final class LoggerConfig
         return $this->file;
     }
 
-    /**
-     * @return bool
-     */
     public function stderr(): bool
     {
         return $this->stderr;
