@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Zorachka\Framework\Logger;
+namespace Zorachka\Logger;
 
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
